@@ -1,6 +1,6 @@
 {
-  "name": "discourse-custom-topic-button-component",
-  "about_url": "https://github.com/discourse/discourse-custom-topic-button-component",
+  "name": "Custom Topic Button",
+  "about_url": "https://meta.discourse.org/t/topic-footer-buttons/116968",
   "license_url": "https://github.com/discourse/discourse-custom-topic-button-component/blob/main/LICENSE",
   "component": true
 }
