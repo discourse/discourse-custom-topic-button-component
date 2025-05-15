@@ -1,4 +1,6 @@
-<script type="text/discourse-plugin" version="0.8">
+import { apiInitializer } from "discourse/lib/api";
+
+export default apiInitializer((api) => {
   const currentUser = api.getCurrentUser();
 
   api.registerTopicFooterButton({
@@ -17,7 +19,7 @@
     },
     action() {
       const topicButtonUrl = settings.custom_topic_button_url;
-      let url = topicButtonUrl
+      let url = topicButtonUrl;
 
       if (this.topic) {
         url = url
@@ -29,7 +31,7 @@
       if (currentUser) {
         url = url
           .replace("<USER_ID>", currentUser.id)
-          .replace("<USERNAME>", currentUser.username)
+          .replace("<USERNAME>", currentUser.username);
       }
 
       window.open(url, "_blank");
@@ -41,6 +43,6 @@
     dependentKeys: ["topic.id", "topic.title", "topic.slug"],
     displayed() {
       return settings.custom_topic_button_enabled;
-    }
+    },
   });
-</script>
+});
